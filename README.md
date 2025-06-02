@@ -1,1 +1,1 @@
-Sports Predictor App, Using ML Model LSTM
+Website for Pallet company, Blessing Pallets. 
