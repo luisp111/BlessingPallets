@@ -1,32 +1,78 @@
-import { Card } from '@/app/ui/dashboard/cards';
-import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchCardData } from '@/app/lib/data';
-import { Suspense } from 'react';
-import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
-import CardWrapper from '@/app/ui/dashboard/cards';
-export default async function Page() {
-  
- 
+
+export default function Page() {
   return (
-    <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Dashboard
-      </h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
-        </Suspense>
-      </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart/>
-        </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices/>
-        </Suspense>
-      </div>
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto px-4">
+          <h1 className={`${lusitana.className} text-4xl md:text-5xl font-bold text-center mb-6`}>
+            Blessing Pallets
+          </h1>
+          <p className="text-xl text-center text-gray-600 max-w-2xl mx-auto">
+            Your trusted partner for all pallet needs - from manufacturing to recycling.
+          </p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className={`${lusitana.className} text-3xl font-bold mb-8 text-center`}>About Us</h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 mb-4">
+              With over 20 years of experience in the pallet industry, we've built our reputation on quality, reliability, and customer satisfaction. Our state-of-the-art facility allows us to provide customized pallet solutions for businesses of all sizes.
+            </p>
+            <p className="text-lg text-gray-700">
+              We take pride in our sustainable practices and commitment to environmental responsibility, ensuring that every pallet we produce meets the highest industry standards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className={`${lusitana.className} text-3xl font-bold mb-12 text-center`}>Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Custom Pallet Manufacturing</h3>
+              <p className="text-gray-600">Tailored pallet solutions designed to meet your specific requirements and industry standards.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Pallet Repair & Recycling</h3>
+              <p className="text-gray-600">Professional repair services and eco-friendly recycling options for used pallets.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Pallet Management</h3>
+              <p className="text-gray-600">Comprehensive pallet management solutions including tracking, maintenance, and replacement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className={`${lusitana.className} text-3xl font-bold mb-8 text-center`}>Contact Us</h2>
+          <div className="max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+                <p className="text-gray-600 mb-2">📞 (555) 123-4567</p>
+                <p className="text-gray-600 mb-2">📧 info@palletsolutions.com</p>
+                <p className="text-gray-600">📍 123 Pallet Street, Industrial Park, CA 90210</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Business Hours</h3>
+                <p className="text-gray-600 mb-2">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p className="text-gray-600 mb-2">Saturday: 9:00 AM - 2:00 PM</p>
+                <p className="text-gray-600">Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
