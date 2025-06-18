@@ -52,6 +52,47 @@ const gallerySections = [
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const handleZoom = (e: React.WheelEvent) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      const delta = e.deltaY * -0.01;
+      const newScale = Math.min(Math.max(0.5, scale + delta), 3);
+      setScale(newScale);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y,
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && scale > 1) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y,
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const resetImage = () => {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
 
   return (
     <main className="p-6 space-y-12">
@@ -88,25 +129,69 @@ export default function GalleryPage() {
       {/* Image Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={() => {
+            setSelectedImage(null);
+            resetImage();
+          }}
         >
-          <div className="relative max-w-4xl max-h-[90vh] w-full">
-            <button
-              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
-              onClick={() => setSelectedImage(null)}
+          <div 
+            className="relative w-[90vw] h-[90vh] flex items-center justify-center"
+            onWheel={handleZoom}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+          >
+            <div className="absolute top-4 right-4 flex gap-4 z-10">
+              <button
+                className="text-white bg-black bg-opacity-75 rounded-full p-3 hover:bg-opacity-100 transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  resetImage();
+                }}
+                title="Reset zoom"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
+              <button
+                className="text-white bg-black bg-opacity-75 rounded-full p-3 hover:bg-opacity-100 transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(null);
+                  resetImage();
+                }}
+                title="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div 
+              className="w-full h-full flex items-center justify-center overflow-auto"
+              style={{ cursor: scale > 1 ? 'grab' : 'default' }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <Image
-              src={selectedImage}
-              alt="Enlarged view"
-              width={1200}
-              height={800}
-              className="w-full h-auto object-contain"
-            />
+              <div
+                style={{
+                  transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+                  transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                }}
+              >
+                <Image
+                  src={selectedImage}
+                  alt="Enlarged view"
+                  width={1200}
+                  height={800}
+                  className="max-w-full max-h-[85vh] w-auto h-auto object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
