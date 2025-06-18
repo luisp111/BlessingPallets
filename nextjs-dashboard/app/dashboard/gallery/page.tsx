@@ -22,7 +22,7 @@ const gallerySections = [
     title: 'Standard & Repaired Pallets',
     description: 'Eco-friendly recycling solutions and repaired pallets.',
     images: [
-      '/gallery/standard_repaired/73222286937__32DB40F2-C90D-4315-8D05-678DB6D7E184.fullsizerender.JPG',
+      '/gallery/standard_repaired/73222286937__32DB40F2-C90D-4315-8D05-678DB6D7E184.fullsizerender.jpg',
       '/gallery/standard_repaired/IMG_2635.jpg',
       '/gallery/standard_repaired/IMG_4675.jpg',
       '/gallery/standard_repaired/IMG_4707.jpg',
