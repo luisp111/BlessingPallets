@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import ContactSection from '@/app/ui/components/ContactSection';
 
 const gallerySections = [
   {
@@ -109,6 +110,8 @@ export default function GalleryPage() {
           </div>
         </div>
       )}
+
+      <ContactSection />
     </main>
   );
 }
