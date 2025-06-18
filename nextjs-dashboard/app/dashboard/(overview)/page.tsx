@@ -45,9 +45,7 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Custom Pallet/Crates Manufacturing</h3>
               <p className="text-gray-600 mb-4">Tailored pallet solutions designed to meet your specific requirements and industry standards.</p>
-              <a href="/gallery" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                View our gallery for more examples →
-              </a>
+              
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="aspect-w-16 aspect-h-9 mb-4">
@@ -59,29 +57,25 @@ export default function Page() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Pallet Repair & Recycling</h3>
               <p className="text-gray-600 mb-4">Professional repair services and eco-friendly recycling options for used pallets.</p>
-              <a href="/gallery" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                See our repair process →
-              </a>
+             
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="aspect-w-16 aspect-h-9 mb-4">
                 <img 
-                  src="gallery/CleanOuts/IMG_5733.jpg" 
+                  src="/gallery/CleanOuts/IMG_5733.jpg" 
                   alt="Pallet Management" 
                   className="object-cover w-full h-48 rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">Pallet Management</h3>
               <p className="text-gray-600 mb-4">Comprehensive pallet management solutions including tracking, maintenance, and replacement.</p>
-              <a href="/gallery" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                View our management solutions →
-              </a>
+             
             </div>
           </div>
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-4">Want to see more of our work?</p>
             <a 
-              href="/gallery" 
+              href="/dashboard/gallery" 
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Visit Our Gallery
@@ -98,8 +92,8 @@ export default function Page() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-                <p className="text-gray-600 mb-2">📞 (555) 123-4567</p>
-                <p className="text-gray-600 mb-2">📧 info@palletsolutions.com</p>
+                <p className="text-gray-600 mb-2">📞 (503) 328-4040</p>
+                <p className="text-gray-600 mb-2">📧 Blessingpallets48@gmail.com</p>
                 <p className="text-gray-600">📍 123 Pallet Street, Industrial Park, CA 90210</p>
               </div>
               <div>
