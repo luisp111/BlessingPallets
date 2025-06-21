@@ -1,9 +1,36 @@
+'use client';
+
 import { lusitana } from '@/app/ui/fonts';
 import ContactSection from '@/app/ui/components/ContactSection';
+import { useState } from 'react';
 
 export default function Page() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen">
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl w-full">
+            <img 
+              src={selectedImage} 
+              alt="Enlarged view" 
+              className="w-full h-auto rounded-lg"
+            />
+            <button 
+              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300"
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
@@ -41,7 +68,8 @@ export default function Page() {
                 <img 
                   src="/gallery/Custom/IMG_3399.jpg" 
                   alt="Custom Pallet Manufacturing" 
-                  className="object-cover w-full h-48 rounded-lg"
+                  className="object-cover w-full h-48 rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setSelectedImage('/gallery/Custom/IMG_3399.jpg')}
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">Custom Pallet/Crates Manufacturing</h3>
@@ -53,7 +81,8 @@ export default function Page() {
                 <img 
                   src="/gallery/standard_repaired/IMG_4712.jpg" 
                   alt="Pallet Repair & Recycling" 
-                  className="object-cover w-full h-48 rounded-lg"
+                  className="object-cover w-full h-48 rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setSelectedImage('/gallery/standard_repaired/IMG_4712.jpg')}
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">Pallet Repair & Recycling</h3>
@@ -65,7 +94,8 @@ export default function Page() {
                 <img 
                   src="/gallery/CleanOuts/IMG_5733.jpg" 
                   alt="Pallet Management" 
-                  className="object-cover w-full h-48 rounded-lg"
+                  className="object-cover w-full h-48 rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                  onClick={() => setSelectedImage('/gallery/CleanOuts/IMG_5733.jpg')}
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">Pallet Management</h3>
