@@ -43,20 +43,43 @@ export default function Page() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className={`${lusitana.className} text-3xl font-bold mb-8 text-center`}>About Us</h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-700 mb-4">
-              With over 20 years of experience in the pallet industry, we've built our reputation on quality, reliability, and customer satisfaction. Our state-of-the-art facility allows us to provide customized pallet solutions for businesses of all sizes.
-            </p>
-            <p className="text-lg text-gray-700">
-              We take pride in our sustainable practices and commitment to environmental responsibility, ensuring that every pallet we produce meets the highest industry standards.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* About Section */}
+<section className="py-16">
+  <div className="container mx-auto px-4">
+    <h2 className={`${lusitana.className} text-3xl font-bold mb-8 text-center`}>
+      About Us
+    </h2>
+
+    <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-700">
+      <p>
+        With over 15 years of experience in the pallet industry, we've built our reputation on quality, reliability, and customer satisfaction. Our facility allows us to provide customized pallet solutions for businesses of all sizes.
+      </p>
+
+      <p>
+        We specialize in custom wood pallets designed to meet the demands of manufacturing, shipping, and storage operations like yours. We know your business depends on reliable, strong, and cost-effective pallet solutions — and that’s exactly what we deliver!
+      </p>
+
+      <div className="bg-gray-100 rounded-xl p-6 shadow-sm">
+        <h3 className="font-semibold text-xl mb-4">Why Work with Blessing Pallets?</h3>
+        <ul className="list-disc list-inside space-y-2">
+          <li> <strong>Custom Sizes & Strengths</strong> – Engineered for your load types, equipment, and handling systems</li>
+          <li> <strong>On-Time Delivery</strong> – Consistent supply to keep your operations running smoothly</li>
+          <li> <strong>Competitive Pricing</strong> – Affordable solutions that don’t sacrifice durability</li>
+          <li> <strong>Sustainable & Compliant</strong> – Eco-conscious practices and ISPM-15 certified for export if needed</li>
+        </ul>
+      </div>
+
+      <p>
+        Whether you need heavy-duty pallets for manufacturing, stackable options for warehousing, or export-ready builds for shipping, we build them to fit your needs.
+      </p>
+
+      <p>
+        We also take pride in our sustainable practices and commitment to environmental responsibility, ensuring that every pallet we produce meets the highest industry standards.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Services Section */}
       <section className="bg-gray-50 py-16">

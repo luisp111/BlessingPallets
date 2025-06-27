@@ -24,21 +24,35 @@ export async function POST(request: Request) {
       })
     );
 
-    const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to:  'luisperezruiz971@gmail.com',
-      subject: `New Contact Form Submission: ${subject}`,
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        ${images.length > 0 ? `<p><strong>Attached Images:</strong> ${images.map(img => img.name).join(', ')}</p>` : ''}
-      `,
-      attachments: attachments,
-    });
+   const { data, error } = await resend.emails.send({
+  from: 'contact@blessingpallets.com',
+  to: 'blessingpallets48@gmail.com',
+  subject: `New Contact Form Submission: ${subject}`,
+  html: `
+    <h3>New Contact Form Submission</h3>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Subject:</strong> ${subject}</p>
+    <p><strong>Message:</strong></p>
+    <p>${message.replace(/\n/g, '<br>')}</p>
+    ${images.length > 0 ? `<p><strong>Attached Images:</strong> ${images.map(img => img.name).join(', ')}</p>` : ''}
+  `,
+  text: `
+New Contact Form Submission
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message:
+${message}
+${images.length > 0 ? `Attached Images: ${images.map(img => img.name).join(', ')}` : ''}
+  `,
+  attachments: attachments,
+  headers: {
+    'List-Unsubscribe': '<mailto:unsubscribe@blessingpallets.com>',
+  },
+});
+
 
     if (error) {
       console.error('Resend error:', error);
