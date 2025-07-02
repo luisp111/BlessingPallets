@@ -2,13 +2,20 @@
 
 import { lusitana } from '@/app/ui/fonts';
 import ContactSection from '@/app/ui/components/ContactSection';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import QuickQuoteModal from '@/app/ui/components/QuickQuoteModal';
 
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showQuoteModal, setShowQuoteModal] = useState(true);
+
+  useEffect(() => {
+    setShowQuoteModal(true);
+  }, []);
 
   return (
     <main className="min-h-screen">
+      <QuickQuoteModal isOpen={showQuoteModal} onClose={() => setShowQuoteModal(false)} />
       {/* Image Modal */}
       {selectedImage && (
         <div 
@@ -56,7 +63,7 @@ export default function Page() {
       </p>
 
       <p>
-        We specialize in custom wood pallets designed to meet the demands of manufacturing, shipping, and storage operations like yours. We know your business depends on reliable, strong, and cost-effective pallet solutions — and that’s exactly what we deliver!
+        We specialize in custom wood pallets designed to meet the demands of manufacturing, shipping, and storage operations like yours. We know your business depends on reliable, strong, and cost-effective pallet solutions — and that's exactly what we deliver!
       </p>
 
       <div className="bg-gray-100 rounded-xl p-6 shadow-sm">
@@ -64,7 +71,7 @@ export default function Page() {
         <ul className="list-disc list-inside space-y-2">
           <li> <strong>Custom Sizes & Strengths</strong> – Engineered for your load types, equipment, and handling systems</li>
           <li> <strong>On-Time Delivery</strong> – Consistent supply to keep your operations running smoothly</li>
-          <li> <strong>Competitive Pricing</strong> – Affordable solutions that don’t sacrifice durability</li>
+          <li> <strong>Competitive Pricing</strong> – Affordable solutions that don't sacrifice durability</li>
           <li> <strong>Sustainable & Compliant</strong> – Eco-conscious practices and ISPM-15 certified for export if needed</li>
         </ul>
       </div>

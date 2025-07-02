@@ -9,8 +9,18 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-              <p className="text-gray-600 mb-2">📞 (503) 328-4040</p>
-              <p className="text-gray-600 mb-2">📧 Blessingpallets48@gmail.com</p>
+              <p>
+        📞 Phone:{" "}
+        <a href="tel:+15033284040" className="text-blue-600 hover:underline">
+          (503) 332-8404
+        </a>
+      </p>
+              <p>
+             📧 Email:{" "}
+            <a href="mailto:blessingpallets48@gmail.com" className="text-blue-600 hover:underline">
+              blessingpallets48@gmail.com
+            </a>
+      </p>
               <p className="text-gray-600">📍 1404 N Schmeer Rd, Portland, OR 97217</p>
             </div>
             <div>
