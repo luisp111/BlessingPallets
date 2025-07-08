@@ -166,12 +166,7 @@ export default function Page() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Pallet/Crates Manufacturing</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Tailored pallet solutions designed to meet your specific requirements and industry standards.</p>
-              <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
-                Learn More
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
+              
             </div>
             
             <div className="card card-hover p-6 group animate-slide-up" style={{animationDelay: '0.1s'}}>
@@ -188,12 +183,7 @@ export default function Page() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Pallet Repair & Recycling</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Professional repair services and eco-friendly recycling options for used pallets.</p>
-              <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
-                Learn More
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
+              
             </div>
             
             <div className="card card-hover p-6 group animate-slide-up" style={{animationDelay: '0.2s'}}>
@@ -210,12 +200,7 @@ export default function Page() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Pallet Management</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Comprehensive pallet management solutions including tracking, maintenance, and replacement.</p>
-              <div className="flex items-center text-green-600 font-semibold group-hover:text-green-700 transition-colors">
-                Learn More
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
+              
             </div>
           </div>
           
