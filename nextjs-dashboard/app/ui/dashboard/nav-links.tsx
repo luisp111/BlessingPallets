@@ -19,7 +19,7 @@ const links = [
 export default function NavLinks() {
   const pathname = usePathname();
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-1 md:space-x-2">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
@@ -27,14 +27,14 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-10 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900',
+              'flex h-8 md:h-10 items-center justify-center gap-1 md:gap-2 rounded-md px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900',
               {
                 'bg-gray-100 text-gray-900': pathname === link.href,
               },
             )}
           >
-            <LinkIcon className="w-5 h-5" />
-            <span>{link.name}</span>
+            <LinkIcon className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="hidden sm:inline">{link.name}</span>
           </Link>
         );
       })}
