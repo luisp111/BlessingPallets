@@ -4,7 +4,7 @@ import { lusitana } from '@/app/ui/fonts';
 export default function AcmeLogo() {
   return (
     <div
-      className={`${lusitana.className} relative w-full h-full flex items-center justify-center`}
+      className={`${lusitana.className} relative w-full h-full flex items-center justify-center overflow-hidden rounded-md`}
     >
       <Image
         src="/gallery/Logo/Logo.jpg"
