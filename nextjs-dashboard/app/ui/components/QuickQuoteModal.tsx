@@ -80,10 +80,10 @@ export default function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProp
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 relative animate-scale-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="bg-gradient-primary text-white p-6 rounded-t-2xl">
+        <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-6 rounded-t-2xl">
           <div className="flex items-center justify-between">
             <div>
               <h2 className={`${lusitana.className} text-2xl md:text-3xl font-bold`}>
@@ -208,7 +208,7 @@ export default function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProp
                       <button
                         type="button"
                         onClick={() => removeImage(index)}
-                        className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm hover:bg-red-600 transition-colors shadow-medium"
+                        className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm hover:bg-red-600 transition-colors shadow-md"
                       >
                         ×
                       </button>
@@ -222,7 +222,7 @@ export default function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProp
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-4 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
@@ -239,7 +239,7 @@ export default function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProp
             </div>
             
             {status === 'success' && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center animate-slide-up">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
                 <div className="flex items-center justify-center text-green-600">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -250,7 +250,7 @@ export default function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProp
             )}
             
             {status === 'error' && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center animate-slide-up">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
                 <div className="flex items-center justify-center text-red-600">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
