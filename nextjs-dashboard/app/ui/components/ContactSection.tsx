@@ -111,9 +111,10 @@ export default function ContactSection() {
                 <p className="text-green-100 mb-6">
                   Get an instant estimate for your pallet needs
                 </p>
-                <button className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
-                  Get Free Quote
-                </button>
+                <a href="/dashboard/customers" className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
+                  Get a Quote
+                </a>
+                
               </div>
             </div>
           </div>

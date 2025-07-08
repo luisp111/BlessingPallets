@@ -153,14 +153,16 @@ export default function Page() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="card card-hover p-6 group animate-slide-up">
-              <div className="relative overflow-hidden rounded-xl mb-6">
+              <div 
+                className="relative overflow-hidden rounded-xl mb-6 cursor-pointer"
+                onClick={() => setSelectedImage('/gallery/Custom/IMG_3399.jpg')}
+              >
                 <img 
                   src="/gallery/Custom/IMG_3399.jpg" 
                   alt="Custom Pallet Manufacturing" 
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-                  onClick={() => setSelectedImage('/gallery/Custom/IMG_3399.jpg')}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Pallet/Crates Manufacturing</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Tailored pallet solutions designed to meet your specific requirements and industry standards.</p>
@@ -173,14 +175,16 @@ export default function Page() {
             </div>
             
             <div className="card card-hover p-6 group animate-slide-up" style={{animationDelay: '0.1s'}}>
-              <div className="relative overflow-hidden rounded-xl mb-6">
+              <div 
+                className="relative overflow-hidden rounded-xl mb-6 cursor-pointer"
+                onClick={() => setSelectedImage('/gallery/standard_repaired/IMG_4712.jpg')}
+              >
                 <img 
                   src="/gallery/standard_repaired/IMG_4712.jpg" 
                   alt="Pallet Repair & Recycling" 
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-                  onClick={() => setSelectedImage('/gallery/standard_repaired/IMG_4712.jpg')}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Pallet Repair & Recycling</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Professional repair services and eco-friendly recycling options for used pallets.</p>
@@ -193,14 +197,16 @@ export default function Page() {
             </div>
             
             <div className="card card-hover p-6 group animate-slide-up" style={{animationDelay: '0.2s'}}>
-              <div className="relative overflow-hidden rounded-xl mb-6">
+              <div 
+                className="relative overflow-hidden rounded-xl mb-6 cursor-pointer"
+                onClick={() => setSelectedImage('/gallery/CleanOuts/IMG_5733.jpg')}
+              >
                 <img 
                   src="/gallery/CleanOuts/IMG_5733.jpg" 
                   alt="Pallet Management" 
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-                  onClick={() => setSelectedImage('/gallery/CleanOuts/IMG_5733.jpg')}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Pallet Management</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">Comprehensive pallet management solutions including tracking, maintenance, and replacement.</p>
