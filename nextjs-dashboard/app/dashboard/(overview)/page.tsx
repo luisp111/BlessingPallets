@@ -51,12 +51,13 @@ export default function Page() {
               Your trusted partner for all pallet needs - from manufacturing to recycling.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
+              <a href="/dashboard/customers"className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
                 Get a Quote
-              </button>
-              <button className="btn-outline border-white text-white hover:bg-white hover:text-green-600">
+              </a>
+              <a href="/dashboard/gallery" className="btn-outline border-white text-white hover:bg-white hover:text-green-600">
                 View Gallery
-              </button>
+              </a>        
+            
             </div>
           </div>
         </div>
