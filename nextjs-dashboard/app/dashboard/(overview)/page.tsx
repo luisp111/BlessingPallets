@@ -41,17 +41,26 @@ export default function Page() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-primary text-white section-padding">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/gallery/IMG_5263.jpg)',
+          }}
+        ></div>
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-green-600/60 to-emerald-600/60"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative container mx-auto container-padding text-center">
           <div className="animate-slide-up">
-            <h1 className={`${lusitana.className} text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight`}>
+            <h1 className={`${lusitana.className} text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight drop-shadow-lg`}>
               Blessing Pallets
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed drop-shadow-md">
               Your trusted partner for all pallet needs - from manufacturing to recycling.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/dashboard/customers"className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
+              <a href="/dashboard/contact" className="btn-secondary bg-white/20 hover:bg-white/30 text-white border-white/30">
                 Get a Quote
               </a>
               <a href="/dashboard/gallery" className="btn-outline border-white text-white hover:bg-white hover:text-green-600">
