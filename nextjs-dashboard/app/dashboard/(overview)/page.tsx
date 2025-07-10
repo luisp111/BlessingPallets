@@ -45,7 +45,7 @@ export default function Page() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/gallery/IMG_5263.jpg)',
+            backgroundImage: 'url(/gallery/IMG_5263.JPG)',
           }}
         ></div>
         {/* Overlay for text readability */}
