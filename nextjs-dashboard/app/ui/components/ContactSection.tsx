@@ -33,7 +33,7 @@ export default function ContactSection() {
                         href="tel:+15033284040" 
                         className="text-white font-semibold hover:text-green-400 transition-colors text-lg"
                       >
-                        (503) 332-8404
+                        (503) 328-8404
                       </a>
                     </div>
                   </div>
