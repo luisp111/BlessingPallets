@@ -80,11 +80,11 @@ export default function ContactSection() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-white/20">
                     <span className="text-gray-300">Monday - Friday</span>
-                    <span className="text-white font-semibold">8:00 AM - 6:00 PM</span>
+                    <span className="text-white font-semibold">6:00 AM - 2:30 PM</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-white/20">
                     <span className="text-gray-300">Saturday</span>
-                    <span className="text-white font-semibold">6:00 AM - 2:30 PM</span>
+                    <span className="text-white font-semibold">Closed</span>
                   </div>
                   <div className="flex justify-between items-center py-3">
                     <span className="text-gray-300">Sunday</span>
